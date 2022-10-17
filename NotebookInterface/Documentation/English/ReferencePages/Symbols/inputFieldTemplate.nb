@@ -1,0 +1,1872 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     71108,       1862]
+NotebookOptionsPosition[     55772,       1445]
+NotebookOutlinePosition[     56461,       1471]
+CellTagsIndexPosition[     56381,       1466]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["1.0", "HistoryData",
+  CellTags->"New",ExpressionUUID->"4741fba7-1645-481f-bd96-c7047275df82"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified",ExpressionUUID->"636cff22-c6f6-4e7e-a377-a8296f8c5b13"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete",ExpressionUUID->"baf620c0-42be-406f-a31d-f82047dc50f4"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised",ExpressionUUID->"1a20828c-5ee4-44bb-8375-d36b042f5eb7"]
+}], "History",
+ CellChangeTimes->{{3.8715611150935106`*^9, 3.871561115546363*^9}},
+ CellID->1247902091,ExpressionUUID->"52597dc7-cdb4-4583-b513-3156d4224d45"],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449,ExpressionUUID->"842a32de-a1bd-4609-92e4-d72953e83266"],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507,ExpressionUUID->"932c54f1-673e-4b57-839f-a9742742e193"],
+
+Cell["NotebookInterface Package", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->756339190,ExpressionUUID->"ddfeb790-f8f8-4565-9fba-23eeec383763"],
+
+Cell["NotebookInterface`", "Categorization",
+ CellLabel->"Context",
+ CellID->3376348,ExpressionUUID->"33d2511c-9874-432f-aca9-f800d11ad9f4"],
+
+Cell["NotebookInterface/ref/inputFieldTemplate", "Categorization",
+ CellLabel->"URI",
+ CellID->471986626,ExpressionUUID->"1957219d-b93a-461d-8308-ca8227c3cd3d"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294,ExpressionUUID->"2ce50cf5-f2c5-4d1b-a582-dbdf8fd1a961"],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360,ExpressionUUID->"6ace025f-6c69-497f-8ab8-2a86db902151"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408,ExpressionUUID->"d9529dc1-49a6-46d9-8d54-60792a6a7472"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412,ExpressionUUID->"c52bff39-f157-40e6-8848-ae8dccb2e0be"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909,ExpressionUUID->"640c619f-462d-41b4-8b59-4ad8e2c1f03b"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930,ExpressionUUID->"ce94a4ba-49e8-4a37-8721-054c31d54507"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254,ExpressionUUID->"21f40d54-7900-4f14-9a69-a3776eac7a24"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771,ExpressionUUID->"772e5214-9cb8-4375-b9e7-26e394f8e982"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175,ExpressionUUID->"3a1a93ed-e582-4465-af50-1ff4191e796d"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985,ExpressionUUID->"9e25bf3a-c382-4cbd-9ac7-9d5e7c570826"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405,ExpressionUUID->"6c8ad1c3-9bea-4164-a70c-2091cc66bb05"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269,ExpressionUUID->"5e4aeacf-f513-4097-b51e-74780f39a9ab"],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205,ExpressionUUID->"166b7187-3795-4668-bfbf-cd9148e991f3"],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745,ExpressionUUID->"8eb5113a-d8e2-4444-809a-c7fdf4c10bfe"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810,ExpressionUUID->"a42d46b4-50e7-469f-89e4-6c8280c51d06"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350,ExpressionUUID->"849246c1-bdfa-4835-9551-2119a56a748c"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365,ExpressionUUID->"8eedc37d-9c02-43df-bd57-2df16c4a2c54"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["inputFieldTemplate", "ObjectName",
+ CellID->1224892054,ExpressionUUID->"3297305d-d224-4ca1-94ab-d51436b8caf5"],
+
+Cell[TextData[{
+ Cell["      ", "ModInfo",ExpressionUUID->
+  "b8952e82-fd15-4890-b679-e6987449cb13"],
+ Cell[BoxData[
+  RowBox[{"inputFieldTemplate", "[", 
+   StyleBox["x", "TI"], "]"}]], "InlineFormula",ExpressionUUID->
+  "f4afef84-3e3c-4450-839d-231136a9b211"],
+ "\[LineSeparator]represents a template to create an evaporative input field \
+containing the expression ",
+ Cell[BoxData[
+  StyleBox["x", "TI"]], "InlineFormula",ExpressionUUID->
+  "0ffc1946-c4b2-4b5b-aae2-c34975c95a35"],
+ ".\n",
+ Cell["      ", "ModInfo",ExpressionUUID->
+  "274a1e1a-f1f6-4ac9-af5c-25a1cdb6d3ad"],
+ Cell[BoxData[
+  RowBox[{"inputFieldTemplate", "[", 
+   RowBox[{
+    StyleBox["x", "TI"], ",", " ", 
+    StyleBox["type", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+  "523146e4-b30d-4cd7-a857-584076b8aad5"],
+ "\[LineSeparator]represents a template to create an evaporative input field \
+whose contents are taken to be of the specified ",
+ Cell[BoxData[
+  StyleBox["type", "TI"]], "InlineFormula",ExpressionUUID->
+  "815f83a4-56bb-4ccf-a00d-77986a002af0"],
+ ".\n",
+ Cell["      ", "ModInfo",ExpressionUUID->
+  "c507c431-e6ce-4f26-87e0-7bff9e9874b4"],
+ Cell[BoxData[
+  RowBox[{"inputFieldTemplate", "[", 
+   RowBox[{
+    StyleBox["x", "TI"], ",", " ", 
+    StyleBox["type", "TI"], ",", " ", 
+    StyleBox["f", "TI"], ",", " ", 
+    StyleBox["message", "TI"], ",", " ", 
+    StyleBox["hint", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+  "9d02bd57-1d22-4fb2-b316-e2ed8a03a4fa"],
+ "\[LineSeparator]represents a template to create an evaporative input field \
+that validates its contents with function ",
+ Cell[BoxData[
+  StyleBox["f", "TI"]], "InlineFormula",ExpressionUUID->
+  "78bcbbfd-e8ce-431b-a5cb-659fc946bb55"],
+ ", displays ",
+ Cell[BoxData[
+  StyleBox["message", "TI"]], "InlineFormula",ExpressionUUID->
+  "8a975708-d120-4b54-b747-b1e47c3057b8"],
+ " when validation fails and displays ",
+ Cell[BoxData[
+  StyleBox["hint", "TI"]], "InlineFormula",ExpressionUUID->
+  "3e0ebb7e-5396-4e29-9efb-5c7d123dabb5"],
+ " in a blank field."
+}], "Usage",
+ CellChangeTimes->{{3.744467506388372*^9, 3.7444675067683797`*^9}, {
+   3.744641145337495*^9, 3.7446411597586393`*^9}, 3.7446412011860585`*^9, {
+   3.7446412470645227`*^9, 
+   3.744641360246666*^9}},ExpressionUUID->"634cd8ff-aada-4e30-9c9a-\
+fd6ba0c05a6c"],
+
+Cell["The following are possible types:", "Notes",
+ CellChangeTimes->{{3.744641399391058*^9, 3.7446414011910763`*^9}},
+ CellID->1067943069,ExpressionUUID->"89b23d47-5715-49ad-aeda-2674422fd198"],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "ModInfo",ExpressionUUID->
+     "545f8172-5cb5-41b1-a5ce-8b103919a6cc"], "Boxes", Cell[
+    "raw boxes (default)", "TableText",ExpressionUUID->
+     "9653c961-0445-496d-8a30-57171e007bb1"]},
+   {Cell["      ", "ModInfo",ExpressionUUID->
+     "bf2e5d99-411b-4760-b983-742b98bb57a2"], "Expression", Cell[
+    "expression", "TableText",ExpressionUUID->
+     "7aac06a3-00a9-4a6f-a7b4-e2114e79c5ca"]},
+   {Cell["      ", "ModInfo",ExpressionUUID->
+     "a7fd0d8e-dbf2-41bd-b4f0-5bc1dc27be2e"], "Number", Cell[
+    "number", "TableText",ExpressionUUID->
+     "b28adbf1-7f3b-4a14-81be-841a68bed73c"]},
+   {Cell["      ", "ModInfo",ExpressionUUID->
+     "bdeb24a7-de72-4bb7-b6eb-661bb6aca0f4"], "String", Cell[
+    "string", "TableText",ExpressionUUID->
+     "07a799f5-a276-4fe1-9100-3a40ec8ee8ac"]}
+  }]], "2ColumnTableMod",
+ CellChangeTimes->{{3.7446414617286873`*^9, 3.7446415204442806`*^9}, {
+  3.7797375274765935`*^9, 3.779737529901043*^9}},
+ CellID->388501959,ExpressionUUID->"e454176d-b881-4644-8b51-10f86fd9e7ad"],
+
+Cell[TextData[{
+ "Use within a ",
+ Cell[BoxData[
+  ButtonBox["setRowTemplate",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/setRowTemplate"]], 
+  "InlineFormula",ExpressionUUID->"92958cf6-22c3-477d-b9fb-b01020baa0b3"],
+ " or ",
+ Cell[BoxData[
+  ButtonBox["verbatimSetRowTemplate",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/verbatimSetRowTemplate"]], 
+  "InlineFormula",ExpressionUUID->"374dd4e7-9a91-4cbd-9501-0ad8c1f290b8"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.744641399391058*^9, 3.7446414011910763`*^9}, {
+  3.7446418395577517`*^9, 3.7446418440833435`*^9}, {3.744642037933271*^9, 
+  3.7446421033852005`*^9}},
+ CellID->615842812,ExpressionUUID->"257f6668-a178-4cdd-b38f-7fdc7307da12"],
+
+Cell["\<\
+ToBoxes or MakeBoxes should typically be used on any values entered \
+programmatically for a field of type Boxes. The box form of Integer and Real \
+numbers and strings is simply the number or string, so it is not strictly \
+necessary to run ToBoxes or MakeBoxes in these cases but only if it is \
+certain that the expression is a number or string, and not, for example, a \
+rational like 1/3.\
+\>", "Notes",
+ CellChangeTimes->{{3.7797377858613997`*^9, 3.779737988556283*^9}, 
+   3.7797381767578506`*^9, {3.7797383276545987`*^9, 3.7797383427313547`*^9}, 
+   3.7797393450924654`*^9},
+ CellID->662083774,ExpressionUUID->"181bb2c1-4c0c-4825-8ef8-e03dd8aa87e6"],
+
+Cell["Valid options are passed on to InputField.", "Notes",
+ CellChangeTimes->{{3.744649681611209*^9, 3.7446496897043705`*^9}, {
+  3.744649854926689*^9, 3.7446498565067205`*^9}, {3.7797393547188406`*^9, 
+  3.7797393715787554`*^9}},
+ CellID->417944534,ExpressionUUID->"cfbc3a6c-e028-4932-bbfc-e08a912304b0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057,ExpressionUUID->"4dd0a035-e45d-4f82-bf5f-6a89d5efb0a4"],
+
+Cell[TextData[ButtonBox["Creating User Interfaces for Engineering \
+Applications",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:NotebookInterface/tutorial/\
+CreatingUserInterfacesForEngineeringApplications"]], "Tutorials",
+ CellID->341631938,ExpressionUUID->"4d81d6fb-8866-4788-936b-6bb808a1a716"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Demonstrations", "RelatedDemonstrationsSection",
+ CellID->1268215905,ExpressionUUID->"7023d8f1-e77d-4d78-998b-a48a9e7f1a68"],
+
+Cell["XXXX", "RelatedDemonstrations",
+ CellID->1129518860,ExpressionUUID->"adf94ef6-5723-4e3f-907e-f102b43ec816"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->1584193535,ExpressionUUID->"5db400c2-c0c7-48db-9261-c4f41bb8432f"],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->1038487239,ExpressionUUID->"055b9f6d-35bc-4520-b005-facf7a7d3444"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704,ExpressionUUID->"65977df7-a18b-485b-9275-c38d96886eec"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["evaporativeInputField",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/evaporativeInputField"]], 
+  "InlineFormula",ExpressionUUID->"d297d11a-90fd-4dfd-bc11-7bf28f075e19"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["inputAidInputField",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/inputAidInputField"]], 
+  "InlineFormula",ExpressionUUID->"6b679933-108e-4e4a-8b96-a5a6f86d80f6"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["evaporativePopupMenu",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/evaporativePopupMenu"]], 
+  "InlineFormula",ExpressionUUID->"08f52eaf-abe9-4a72-a48d-c91fdbfe2155"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["evaporativeUnitsMenu",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/evaporativeUnitsMenu"]], 
+  "InlineFormula",ExpressionUUID->"5445ab43-c05c-4647-ac7f-7f56f3aa3e52"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["popupMenuTemplate",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/popupMenuTemplate"]], 
+  "InlineFormula",ExpressionUUID->"699ba1a5-49e3-4d03-85d5-cb5095c7e13e"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["unitsMenuTemplate",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/unitsMenuTemplate"]], 
+  "InlineFormula",ExpressionUUID->"89fb9314-189f-4435-af94-f2295e6fbe7b"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["setRowTemplate",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/setRowTemplate"]], 
+  "InlineFormula",ExpressionUUID->"ccbeb511-3be4-459d-99f1-fabc441539ca"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["verbatimSetRowTemplate",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/verbatimSetRowTemplate"]], 
+  "InlineFormula",ExpressionUUID->"e48b15e9-edaa-4064-9167-8773a6074f9d"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["verbatimRowTemplate",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/verbatimRowTemplate"]], 
+  "InlineFormula",ExpressionUUID->"e20e8aa7-4b47-4209-ba02-98f1b958c98e"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["rowTemplateToBoxes",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/rowTemplateToBoxes"]], 
+  "InlineFormula",ExpressionUUID->"6585488f-26c8-48a5-8053-e075b9d4644c"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["cellTemplateToBoxes",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/cellTemplateToBoxes"]], 
+  "InlineFormula",ExpressionUUID->"baa9fda4-c182-4dba-b9b0-7a403bc82ef9"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["replaceEvaporativeControlsInCellByTemplate",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:NotebookInterface/ref/replaceEvaporativeControlsInCellByTemplate"]\
+], "InlineFormula",ExpressionUUID->"01fe5f09-d6a3-4817-95a3-8cf1eda63dfc"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["readCellAndValidateAgainstTemplate",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:NotebookInterface/ref/readCellAndValidateAgainstTemplate"]], 
+  "InlineFormula",ExpressionUUID->"45e88b9a-d868-452e-8f83-a04cbca2188e"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["inputAidCellButtonAction",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/inputAidCellButtonAction"]], 
+  "InlineFormula",ExpressionUUID->"ead01924-f660-4a35-bb74-525c533a072e"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["inputAidTemplateToBoxes",
+   BaseStyle->"Link",
+   ButtonData->"paclet:NotebookInterface/ref/inputAidTemplateToBoxes"]], 
+  "InlineFormula",ExpressionUUID->"ea28c549-d9cd-49c7-8fd4-cd2ff01529a9"]
+}], "SeeAlso",
+ CellChangeTimes->{{3.744634557578514*^9, 3.7446346292275143`*^9}, {
+   3.7446436880183864`*^9, 3.744643717256978*^9}, {3.7446438148519363`*^9, 
+   3.7446438672409887`*^9}, {3.7446439123978977`*^9, 3.744643938584423*^9}, {
+   3.7446439729101143`*^9, 3.744644013328927*^9}, 3.744644338544456*^9, {
+   3.744644545126606*^9, 3.7446445575598545`*^9}, {3.7447302253515506`*^9, 
+   3.7447302770546007`*^9}, {3.74473098960408*^9, 3.744731050262305*^9}, {
+   3.744731124639823*^9, 3.7447311335110035`*^9}, 3.7447312178977194`*^9, 
+   3.744731248873348*^9, {3.745593822889099*^9, 3.745593823653514*^9}, 
+   3.761325192458336*^9},
+ CellID->868117219,ExpressionUUID->"a8913cb4-be72-4259-b997-8a89b1c360b9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "MoreAboutSection",
+ CellID->38303248,ExpressionUUID->"80fa8127-c969-46b6-9976-1b6123e61709"],
+
+Cell[TextData[ButtonBox["NotebookInterface Package",
+ BaseStyle->"Link",
+ ButtonData->"paclet:NotebookInterface/guide/NotebookInterface"]], "MoreAbout",\
+
+ CellID->1665078683,ExpressionUUID->"efe76235-935e-4c28-a1d1-8afcd225f456"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151,ExpressionUUID->"35198a5f-e3ae-400d-93ec-6e3633a707b8"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<NotebookInterface`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->500661178,ExpressionUUID->"7cdfe8ac-6f1b-4722-a9fd-280dc8ce88bc"],
+
+Cell["Create an initially-blank input field:", "ExampleText",
+ CellChangeTimes->{{3.7446422793222585`*^9, 3.7446423579166203`*^9}, {
+  3.744642462905779*^9, 3.744642491897649*^9}},
+ CellID->116842918,ExpressionUUID->"f44adf84-cf78-47ac-bf7c-5b5fa1a945fe"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rowTemplate", "=", 
+   RowBox[{"setRowTemplate", "[", 
+    RowBox[{
+     RowBox[{"applicationInputRow", "[", "\"\<a\>\"", "]"}], ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{"inputFieldTemplate", "[", "Null", "]"}], "\[IndentingNewLine]",
+       "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.74463354290627*^9, 3.744633561671772*^9}, {
+   3.744633595046442*^9, 3.744633656108328*^9}, {3.7446337853169136`*^9, 
+   3.744633791127088*^9}, {3.744634143693962*^9, 3.7446342158254137`*^9}, {
+   3.7446342766946363`*^9, 3.7446342924649515`*^9}, {3.744634436002514*^9, 
+   3.744634437282514*^9}, {3.744634926563514*^9, 3.744634926833514*^9}, {
+   3.744634959971514*^9, 3.744634973441514*^9}, {3.744635035059514*^9, 
+   3.7446350581155143`*^9}, {3.7446421551353073`*^9, 3.7446421615166903`*^9}, 
+   3.74464242175854*^9, {3.744642452013452*^9, 3.7446424525534678`*^9}},
+ CellLabel->"In[2]:=",
+ CellID->439849185,ExpressionUUID->"8f2ace17-4db1-41ac-8073-1493fca24bca"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RawBoxes", "@", 
+  RowBox[{"rowTemplateToBoxes", "[", "rowTemplate", "]"}]}]], "Input",
+ CellChangeTimes->{{3.735057553728956*^9, 3.735057555612395*^9}, 
+   3.7446349981475143`*^9},
+ CellLabel->"In[3]:=",
+ CellID->438965965,ExpressionUUID->"0487f260-b966-446e-aa46-b5ee37ec5814"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"applicationInputRow", "[", "\<\"a\"\>", "]"}], "=", 
+   TagBox[
+    DynamicModuleBox[{
+     NotebookInterface`Private`evaporativeInputFieldVariable$$ = "", 
+     NotebookInterface`Private`orig$$ = ""}, 
+     InterpretationBox[
+      FrameBox[
+       InputFieldBox[Dynamic[
+        NotebookInterface`Private`evaporativeInputFieldVariable$$], Boxes,
+        Appearance->None,
+        FieldHint->Null],
+       Background->Automatic,
+       FrameMargins->1,
+       FrameStyle->GrayLevel[0.7],
+       StripOnInput->False],
+      ToExpression[
+      NotebookInterface`Private`evaporativeInputFieldVariable$$, 
+       StandardForm]],
+     DynamicModuleValues:>{}],
+    Setting]}], ";"}]], "Output",
+ CellChangeTimes->{3.744642168661119*^9, 3.7446424236685977`*^9, 
+  3.74464245495354*^9, 3.779737543906003*^9, 3.779738427788247*^9, 
+  3.779739716937746*^9},
+ CellLabel->"Out[3]=",
+ CellID->14082470,ExpressionUUID->"e6177f7d-8ede-4246-ad3d-32979aa66a64"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968,ExpressionUUID->"9cb58aa7-be58-471d-ab07-c121d0ab64ab"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Scope", "ExampleSection",ExpressionUUID->
+   "c3c1f54b-2958-4e76-b116-cca4979e0cc0"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1293636265,ExpressionUUID->"71c06dd2-f0e1-4251-852d-987d5856a846"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<NotebookInterface`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->15561870,ExpressionUUID->"54156716-71ac-4162-9d97-2721a4f21bab"],
+
+Cell["\<\
+If a value is supplied, the field is highlighted when the input is changed. \
+ToBoxes is used so that RandomReal evaluates to a number:\
+\>", "ExampleText",
+ CellChangeTimes->{{3.7446422793222585`*^9, 3.7446423579166203`*^9}, {
+  3.744642462905779*^9, 3.7446425365399923`*^9}, {3.7797383891266165`*^9, 
+  3.77973840490726*^9}},
+ CellID->559208638,ExpressionUUID->"19e00eac-3476-42b8-b717-bd19ce728877"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rowTemplate", "=", 
+   RowBox[{"setRowTemplate", "[", 
+    RowBox[{
+     RowBox[{"applicationInputRow", "[", "\"\<a\>\"", "]"}], ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{"inputFieldTemplate", "[", 
+       RowBox[{"ToBoxes", "@", 
+        RowBox[{"RandomReal", "[", "]"}]}], "]"}], "\[IndentingNewLine]", 
+      "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.74463354290627*^9, 3.744633561671772*^9}, {
+   3.744633595046442*^9, 3.744633656108328*^9}, {3.7446337853169136`*^9, 
+   3.744633791127088*^9}, {3.744634143693962*^9, 3.7446342158254137`*^9}, {
+   3.7446342766946363`*^9, 3.7446342924649515`*^9}, {3.744634436002514*^9, 
+   3.744634437282514*^9}, {3.744634926563514*^9, 3.744634926833514*^9}, {
+   3.744634959971514*^9, 3.744634973441514*^9}, {3.744635035059514*^9, 
+   3.7446350581155143`*^9}, {3.7446421551353073`*^9, 3.7446421615166903`*^9}, 
+   3.74464242175854*^9, {3.744642452013452*^9, 3.7446424525534678`*^9}, {
+   3.74464254513025*^9, 3.7446425489723654`*^9}, {3.77973803809313*^9, 
+   3.7797380420021243`*^9}, 3.7797382994923506`*^9},
+ CellLabel->"In[2]:=",
+ CellID->344417707,ExpressionUUID->"1cb1be97-9225-4484-9109-e03b1fa3c593"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RawBoxes", "@", 
+  RowBox[{"rowTemplateToBoxes", "[", "rowTemplate", "]"}]}]], "Input",
+ CellChangeTimes->{{3.735057553728956*^9, 3.735057555612395*^9}, 
+   3.7446349981475143`*^9},
+ CellLabel->"In[3]:=",
+ CellID->302170445,ExpressionUUID->"6e818f60-4384-4786-9c48-6cff7e9d1fc7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"applicationInputRow", "[", "\<\"a\"\>", "]"}], "=", 
+   TagBox[
+    DynamicModuleBox[{
+     NotebookInterface`Private`evaporativeInputFieldVariable$$ = 
+     "0.32100127593882877`", NotebookInterface`Private`orig$$ = 
+     "0.32100127593882877`"}, 
+     InterpretationBox[
+      FrameBox[
+       InputFieldBox[Dynamic[
+        NotebookInterface`Private`evaporativeInputFieldVariable$$], Boxes,
+        Appearance->None,
+        FieldHint->Null],
+       Background->Dynamic[
+         If[Quiet[
+            ToExpression[
+            NotebookInterface`Private`evaporativeInputFieldVariable$$, 
+             StandardForm]] === 0.32100127593882877`, Automatic, LightYellow]],
+       FrameMargins->1,
+       FrameStyle->GrayLevel[0.7],
+       StripOnInput->False],
+      ToExpression[
+      NotebookInterface`Private`evaporativeInputFieldVariable$$, 
+       StandardForm]],
+     DynamicModuleValues:>{}],
+    Setting]}], ";"}]], "Output",
+ CellChangeTimes->{3.744642168661119*^9, 3.7446424236685977`*^9, 
+  3.74464245495354*^9, 3.744642552362467*^9, 3.779737619054386*^9, 
+  3.779738428358671*^9, 3.779739717370253*^9},
+ CellLabel->"Out[3]=",
+ CellID->265779099,ExpressionUUID->"5eca7977-1360-46a8-a07f-6a1abaa90697"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "431298e0-09fc-46cc-967a-186213426b8f"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->5490653,ExpressionUUID->"996d2426-075a-4a72-817c-0a82be49e746"],
+
+Cell["\<\
+Use MakeBoxes to enter complicated held expressions into fields with the \
+default type Boxes:\
+\>", "ExampleText",
+ CellChangeTimes->{{3.7446425928123817`*^9, 3.744642609123708*^9}, {
+  3.779737683517091*^9, 3.7797377025266905`*^9}, {3.7797383133295097`*^9, 
+  3.779738314043703*^9}},
+ CellID->953971111,ExpressionUUID->"8af459a6-9de8-4eae-afe4-52342c926fea"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rowTemplate", "=", 
+   RowBox[{"setRowTemplate", "[", 
+    RowBox[{
+     RowBox[{"applicationInputRow", "[", "\"\<a\>\"", "]"}], ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{"inputFieldTemplate", "[", 
+       RowBox[{"MakeBoxes", "[", 
+        RowBox[{"1", "+", "Pi", "+", "2", "+", "Pi"}], "]"}], "]"}], 
+      "\[IndentingNewLine]", "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.74463354290627*^9, 3.744633561671772*^9}, {
+   3.744633595046442*^9, 3.744633656108328*^9}, {3.7446337853169136`*^9, 
+   3.744633791127088*^9}, {3.744634143693962*^9, 3.7446342158254137`*^9}, {
+   3.7446342766946363`*^9, 3.7446342924649515`*^9}, {3.744634436002514*^9, 
+   3.744634437282514*^9}, {3.744634926563514*^9, 3.744634926833514*^9}, {
+   3.744634959971514*^9, 3.744634973441514*^9}, {3.744635035059514*^9, 
+   3.7446350581155143`*^9}, {3.7446421551353073`*^9, 3.7446421615166903`*^9}, 
+   3.74464242175854*^9, {3.744642452013452*^9, 3.7446424525534678`*^9}, {
+   3.74464254513025*^9, 3.7446425489723654`*^9}, {3.7446426211159506`*^9, 
+   3.744642622107972*^9}, {3.779737708671762*^9, 3.7797377301127243`*^9}},
+ CellLabel->"In[1]:=",
+ CellID->536876350,ExpressionUUID->"3d205a57-e6c6-41c0-8eee-d2e330e60e4d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RawBoxes", "@", 
+  RowBox[{"rowTemplateToBoxes", "[", "rowTemplate", "]"}]}]], "Input",
+ CellChangeTimes->{{3.735057553728956*^9, 3.735057555612395*^9}, 
+   3.7446349981475143`*^9},
+ CellLabel->"In[2]:=",
+ CellID->535706038,ExpressionUUID->"b80b8a45-48c9-4162-9bf2-b45d7b1b0af3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"applicationInputRow", "[", "\<\"a\"\>", "]"}], "=", 
+   TagBox[
+    DynamicModuleBox[{
+     NotebookInterface`Private`evaporativeInputFieldVariable$$ = 
+     RowBox[{"1", "+", "\[Pi]", "+", "2", "+", "\[Pi]"}], 
+     NotebookInterface`Private`orig$$ = 
+     RowBox[{"1", "+", "\[Pi]", "+", "2", "+", "\[Pi]"}]}, 
+     InterpretationBox[
+      FrameBox[
+       InputFieldBox[Dynamic[
+        NotebookInterface`Private`evaporativeInputFieldVariable$$], Boxes,
+        Appearance->None,
+        FieldHint->Null],
+       Background->Dynamic[
+         If[Quiet[
+            ToExpression[
+            NotebookInterface`Private`evaporativeInputFieldVariable$$, 
+             StandardForm]] === 3 + 2 Pi, Automatic, LightYellow]],
+       FrameMargins->1,
+       FrameStyle->GrayLevel[0.7],
+       StripOnInput->False],
+      ToExpression[
+      NotebookInterface`Private`evaporativeInputFieldVariable$$, 
+       StandardForm]],
+     DynamicModuleValues:>{}],
+    Setting]}], ";"}]], "Output",
+ CellChangeTimes->{3.7446426244180183`*^9, 3.7797376194124303`*^9, 
+  3.7797377338122935`*^9, 3.779738428853571*^9, 3.779739717804644*^9},
+ CellLabel->"Out[2]=",
+ CellID->53013124,ExpressionUUID->"64561102-0bdd-4e3e-9d0e-6587e643c603"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "66db3b29-2599-4336-81d5-9e55e40cda52"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->367970339,ExpressionUUID->"79d4f873-0566-4008-8eb7-cd3c30303f17"],
+
+Cell["Limit the input field to numeric values:", "ExampleText",
+ CellChangeTimes->{{3.7446425928123817`*^9, 3.744642609123708*^9}},
+ CellID->715464659,ExpressionUUID->"6e7e865d-f391-42da-86bf-c238ded7f0f6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rowTemplate", "=", 
+   RowBox[{"setRowTemplate", "[", 
+    RowBox[{
+     RowBox[{"applicationInputRow", "[", "\"\<a\>\"", "]"}], ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{"inputFieldTemplate", "[", 
+       RowBox[{
+        RowBox[{"RandomReal", "[", "]"}], ",", "Number"}], "]"}], 
+      "\[IndentingNewLine]", "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.74463354290627*^9, 3.744633561671772*^9}, {
+   3.744633595046442*^9, 3.744633656108328*^9}, {3.7446337853169136`*^9, 
+   3.744633791127088*^9}, {3.744634143693962*^9, 3.7446342158254137`*^9}, {
+   3.7446342766946363`*^9, 3.7446342924649515`*^9}, {3.744634436002514*^9, 
+   3.744634437282514*^9}, {3.744634926563514*^9, 3.744634926833514*^9}, {
+   3.744634959971514*^9, 3.744634973441514*^9}, {3.744635035059514*^9, 
+   3.7446350581155143`*^9}, {3.7446421551353073`*^9, 3.7446421615166903`*^9}, 
+   3.74464242175854*^9, {3.744642452013452*^9, 3.7446424525534678`*^9}, {
+   3.74464254513025*^9, 3.7446425489723654`*^9}, {3.7446426211159506`*^9, 
+   3.744642622107972*^9}},
+ CellLabel->"In[1]:=",
+ CellID->282542660,ExpressionUUID->"9c0ad48d-a64a-46f5-bc88-756593b37d4b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RawBoxes", "@", 
+  RowBox[{"rowTemplateToBoxes", "[", "rowTemplate", "]"}]}]], "Input",
+ CellChangeTimes->{{3.735057553728956*^9, 3.735057555612395*^9}, 
+   3.7446349981475143`*^9},
+ CellLabel->"In[2]:=",
+ CellID->94953457,ExpressionUUID->"5df08a75-e02d-44c3-bb68-54a81c9f5328"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"applicationInputRow", "[", "\<\"a\"\>", "]"}], "=", 
+   TagBox[
+    DynamicModuleBox[{
+     NotebookInterface`Private`evaporativeInputFieldVariable$$ = 
+     0.9170979615600026, NotebookInterface`Private`orig$$ = 
+     0.9170979615600026}, 
+     InterpretationBox[
+      FrameBox[
+       InputFieldBox[Dynamic[
+        NotebookInterface`Private`evaporativeInputFieldVariable$$], Number,
+        Appearance->None,
+        FieldHint->Null],
+       Background->Dynamic[
+         If[
+         NotebookInterface`Private`evaporativeInputFieldVariable$$ === 
+          0.9170979615600026, Automatic, LightYellow]],
+       FrameMargins->1,
+       FrameStyle->GrayLevel[0.7],
+       StripOnInput->False],
+      NotebookInterface`Private`evaporativeInputFieldVariable$$],
+     DynamicModuleValues:>{}],
+    Setting]}], ";"}]], "Output",
+ CellChangeTimes->{3.7446426244180183`*^9, 3.7797376194124303`*^9, 
+  3.779738429762859*^9, 3.779739718167693*^9},
+ CellLabel->"Out[2]=",
+ CellID->84306452,ExpressionUUID->"25004fa3-36ff-471a-a09b-97b7eaf2a2b1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "51b29e61-1544-4d16-b874-137f672ae156"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->692269371,ExpressionUUID->"552c8576-aa10-4c26-9922-29a34bc0a105"],
+
+Cell["Quotes are required to input a string with type Expression:", \
+"ExampleText",
+ CellChangeTimes->{{3.7446422793222585`*^9, 3.7446423579166203`*^9}},
+ CellID->1578483,ExpressionUUID->"f12a1624-cc23-4224-8b24-9ce77aa8b027"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rowTemplate", "=", 
+   RowBox[{"setRowTemplate", "[", 
+    RowBox[{
+     RowBox[{"applicationInputRow", "[", "\"\<a\>\"", "]"}], ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{"inputFieldTemplate", "[", 
+       RowBox[{
+       "\"\<A string with type Expression\>\"", ",", " ", "Expression"}], 
+       "]"}], "\[IndentingNewLine]", "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.74463354290627*^9, 3.744633561671772*^9}, {
+  3.744633595046442*^9, 3.744633656108328*^9}, {3.7446337853169136`*^9, 
+  3.744633791127088*^9}, {3.744634143693962*^9, 3.7446342158254137`*^9}, {
+  3.7446342766946363`*^9, 3.7446342924649515`*^9}, {3.744634436002514*^9, 
+  3.744634437282514*^9}, {3.744634926563514*^9, 3.744634926833514*^9}, {
+  3.744634959971514*^9, 3.744634973441514*^9}, {3.744635035059514*^9, 
+  3.7446350581155143`*^9}, {3.7446421551353073`*^9, 3.7446421615166903`*^9}, {
+  3.744642224550474*^9, 3.744642243762627*^9}, {3.7797376544912815`*^9, 
+  3.7797376560516806`*^9}},
+ CellLabel->"In[1]:=",
+ CellID->10230035,ExpressionUUID->"dd965564-d4a5-4677-8f4f-f59d2fde4e53"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RawBoxes", "@", 
+  RowBox[{"rowTemplateToBoxes", "[", "rowTemplate", "]"}]}]], "Input",
+ CellChangeTimes->{{3.735057553728956*^9, 3.735057555612395*^9}, 
+   3.7446349981475143`*^9},
+ CellLabel->"In[2]:=",
+ CellID->357247989,ExpressionUUID->"f0ac60f1-6aee-42dd-991d-d1ac7bd8f94f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"applicationInputRow", "[", "\<\"a\"\>", "]"}], "=", 
+   TagBox[
+    DynamicModuleBox[{
+     NotebookInterface`Private`evaporativeInputFieldVariable$$ = 
+     "A string with type Expression", NotebookInterface`Private`orig$$ = 
+     "A string with type Expression"}, 
+     InterpretationBox[
+      FrameBox[
+       InputFieldBox[Dynamic[
+        NotebookInterface`Private`evaporativeInputFieldVariable$$], Expression,
+        Appearance->None,
+        FieldHint->Null],
+       Background->Dynamic[
+         If[
+         NotebookInterface`Private`evaporativeInputFieldVariable$$ === 
+          "A string with type Expression", Automatic, LightYellow]],
+       FrameMargins->1,
+       FrameStyle->GrayLevel[0.7],
+       StripOnInput->False],
+      NotebookInterface`Private`evaporativeInputFieldVariable$$],
+     DynamicModuleValues:>{}],
+    Setting]}], ";"}]], "Output",
+ CellChangeTimes->{3.744642168661119*^9, 3.7446422497149844`*^9, 
+  3.7797376197990108`*^9, 3.7797376602614403`*^9, 3.779738430157563*^9, 
+  3.7797397185320263`*^9},
+ CellLabel->"Out[2]=",
+ CellID->3196559,ExpressionUUID->"80ed2310-27cf-4363-9e13-d9daee81dba3"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "c97a194b-94fe-41ad-ab84-7ccc5fcca1c6"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->61913419,ExpressionUUID->"0de749db-d974-4a6f-b75f-82f8dc2f138e"],
+
+Cell["With type String quotes are not displayed:", "ExampleText",
+ CellChangeTimes->{{3.7446422793222585`*^9, 3.7446423824533606`*^9}, 
+   3.7446426465614614`*^9, 3.77973846547096*^9},
+ CellID->42360610,ExpressionUUID->"45bbccc2-15b6-4522-9573-e6d682522683"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rowTemplate", "=", 
+   RowBox[{"setRowTemplate", "[", 
+    RowBox[{
+     RowBox[{"applicationInputRow", "[", "\"\<a\>\"", "]"}], ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{"inputFieldTemplate", "[", 
+       RowBox[{"\"\<A string with type String\>\"", ",", " ", "String"}], 
+       "]"}], "\[IndentingNewLine]", "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.74463354290627*^9, 3.744633561671772*^9}, {
+  3.744633595046442*^9, 3.744633656108328*^9}, {3.7446337853169136`*^9, 
+  3.744633791127088*^9}, {3.744634143693962*^9, 3.7446342158254137`*^9}, {
+  3.7446342766946363`*^9, 3.7446342924649515`*^9}, {3.744634436002514*^9, 
+  3.744634437282514*^9}, {3.744634926563514*^9, 3.744634926833514*^9}, {
+  3.744634959971514*^9, 3.744634973441514*^9}, {3.744635035059514*^9, 
+  3.7446350581155143`*^9}, {3.7446421551353073`*^9, 3.7446421615166903`*^9}, {
+  3.744642224550474*^9, 3.7446422649008255`*^9}},
+ CellLabel->"In[1]:=",
+ CellID->256592232,ExpressionUUID->"e4aa48d2-55d3-4333-a4b4-64951b6f6ae3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RawBoxes", "@", 
+  RowBox[{"rowTemplateToBoxes", "[", "rowTemplate", "]"}]}]], "Input",
+ CellChangeTimes->{{3.735057553728956*^9, 3.735057555612395*^9}, 
+   3.7446349981475143`*^9},
+ CellLabel->"In[2]:=",
+ CellID->241602866,ExpressionUUID->"df71120d-824e-45a8-b9bb-e08cae3e9e32"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"applicationInputRow", "[", "\<\"a\"\>", "]"}], "=", 
+   TagBox[
+    DynamicModuleBox[{
+     NotebookInterface`Private`evaporativeInputFieldVariable$$ = 
+     "A string with type String", NotebookInterface`Private`orig$$ = 
+     "A string with type String"}, 
+     InterpretationBox[
+      FrameBox[
+       InputFieldBox[Dynamic[
+        NotebookInterface`Private`evaporativeInputFieldVariable$$], String,
+        Appearance->None,
+        FieldHint->Null],
+       Background->Dynamic[
+         If[
+         NotebookInterface`Private`evaporativeInputFieldVariable$$ === 
+          "A string with type String", Automatic, LightYellow]],
+       FrameMargins->1,
+       FrameStyle->GrayLevel[0.7],
+       StripOnInput->False],
+      NotebookInterface`Private`evaporativeInputFieldVariable$$],
+     DynamicModuleValues:>{}],
+    Setting]}], ";"}]], "Output",
+ CellChangeTimes->{3.7446424018049417`*^9, 3.779737620200142*^9, 
+  3.779738430627698*^9, 3.779739718946824*^9},
+ CellLabel->"Out[2]=",
+ CellID->82347321,ExpressionUUID->"69a612c1-ad6e-4b37-a4c0-3405bf315fd5"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "d60bfba0-0414-4eac-a99f-4203c8bbdac7"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->425024919,ExpressionUUID->"c175e821-b99c-456e-94ef-2cc088e9118f"],
+
+Cell["\<\
+Simple validation of the value can be performed when a validation function \
+and message are provided:\
+\>", "ExampleText",
+ CellChangeTimes->{{3.7446426680218906`*^9, 3.7446427143088207`*^9}},
+ CellID->305291034,ExpressionUUID->"7ca585db-a5b2-4c29-8d13-e7d28e287776"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rowTemplate", "=", 
+   RowBox[{"setRowTemplate", "[", 
+    RowBox[{
+     RowBox[{"applicationInputRow", "[", "\"\<a\>\"", "]"}], ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{"inputFieldTemplate", "[", 
+       RowBox[{
+        RowBox[{"RandomReal", "[", "]"}], ",", "Number", ",", "  ", 
+        RowBox[{"Function", "[", 
+         RowBox[{
+          RowBox[{"NumericQ", "[", "#", "]"}], "&&", 
+          RowBox[{"#", ">", "3"}]}], "]"}], ",", 
+        "\"\<The input must be numeric and greater than 3\>\"", ",", 
+        "\"\<Enter a number\>\""}], "]"}], "\[IndentingNewLine]", "}"}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.74463354290627*^9, 3.744633561671772*^9}, {
+  3.744633595046442*^9, 3.744633656108328*^9}, {3.7446337853169136`*^9, 
+  3.744633791127088*^9}, {3.744634143693962*^9, 3.7446342158254137`*^9}, {
+  3.7446342766946363`*^9, 3.7446342924649515`*^9}, {3.744634436002514*^9, 
+  3.744634437282514*^9}, {3.744634926563514*^9, 3.744634926833514*^9}, {
+  3.744634959971514*^9, 3.744634973441514*^9}, {3.744635035059514*^9, 
+  3.7446350581155143`*^9}, {3.7446427398623323`*^9, 3.74464274150637*^9}, {
+  3.744643538481385*^9, 3.7446435390113955`*^9}, {3.7797396606219616`*^9, 
+  3.779739668856536*^9}},
+ CellLabel->"In[1]:=",
+ CellID->143775698,ExpressionUUID->"04d8be41-eba1-4591-8a6b-0d2d9dfcb5f4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RawBoxes", "@", 
+  RowBox[{"rowTemplateToBoxes", "[", "rowTemplate", "]"}]}]], "Input",
+ CellChangeTimes->{{3.735057553728956*^9, 3.735057555612395*^9}, 
+   3.7446349981475143`*^9},
+ CellLabel->"In[2]:=",
+ CellID->835284947,ExpressionUUID->"923f39ba-e2fb-41cc-9665-5f290858bdd0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"applicationInputRow", "[", "\<\"a\"\>", "]"}], "=", 
+   TagBox[
+    DynamicModuleBox[{
+     NotebookInterface`Private`evaporativeInputFieldVariable$$ = 
+     0.1841084653044649, NotebookInterface`Private`orig$$ = 
+     0.1841084653044649}, 
+     InterpretationBox[
+      TagBox[
+       TooltipBox[
+        FrameBox[
+         InputFieldBox[Dynamic[
+          NotebookInterface`Private`evaporativeInputFieldVariable$$], Number,
+          Appearance->None,
+          FieldHint->"Enter a number"],
+         Background->Dynamic[
+           If[
+           NotebookInterface`Private`evaporativeInputFieldVariable$$ === 
+            0.1841084653044649, Automatic, LightYellow]],
+         FrameMargins->1,
+         FrameStyle->Dynamic[
+           If[(And[
+              NumericQ[#], # > 3]& )[
+             NotebookInterface`Private`evaporativeInputFieldVariable$$] === 
+            True, 
+            GrayLevel[0.7], 
+            Directive[Red, Thick]]],
+         StripOnInput->False],
+        DynamicBox[
+         ToBoxes[
+          If[(And[
+             NumericQ[#], # > 3]& )[
+            NotebookInterface`Private`evaporativeInputFieldVariable$$] === 
+           True, "", "The input must be numeric and greater than 3"], 
+          StandardForm]],
+        TooltipStyle->Dynamic[
+          If[(And[
+             NumericQ[#], # > 3]& )[
+            NotebookInterface`Private`evaporativeInputFieldVariable$$] === 
+           True, {Background -> Directive[{White, 
+               Opacity[0]}], CellFrame -> None}, Automatic]]],
+       Annotation[#, 
+        Dynamic[
+         If[(And[
+            NumericQ[#], # > 3]& )[
+           NotebookInterface`Private`evaporativeInputFieldVariable$$] === 
+          True, "", "The input must be numeric and greater than 3"]], 
+        "Tooltip"]& ],
+      NotebookInterface`Private`evaporativeInputFieldVariable$$],
+     DynamicModuleValues:>{}],
+    Setting]}], ";"}]], "Output",
+ CellChangeTimes->{{3.744642727351082*^9, 3.7446427434864097`*^9}, 
+   3.779737620570063*^9, 3.779738431044442*^9, 3.779738515834324*^9, 
+   3.7797396059373984`*^9, {3.779739710020542*^9, 3.779739719294545*^9}},
+ CellLabel->"Out[2]=",
+ CellID->578502666,ExpressionUUID->"3c94ab56-2328-43d2-bbdf-929db5f1b4a1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "e90bd719-fa7c-45fb-92ee-8d4063db1c4c"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->801444734,ExpressionUUID->"37f10895-6d24-4744-abfc-0c792a37bfbd"],
+
+Cell["\<\
+A hint can be provided that will be displayed when the field is empty:\
+\>", "ExampleText",
+ CellChangeTimes->{{3.7446426680218906`*^9, 3.7446427143088207`*^9}, {
+  3.7446435618698535`*^9, 3.744643586276346*^9}},
+ CellID->14995451,ExpressionUUID->"5a33c6a1-2230-43f4-8c74-ce0ad58a6208"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rowTemplate", "=", 
+   RowBox[{"setRowTemplate", "[", 
+    RowBox[{
+     RowBox[{"applicationInputRow", "[", "\"\<a\>\"", "]"}], ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{"inputFieldTemplate", "[", 
+       RowBox[{
+       "None", ",", "Number", ",", "  ", "None", ",", "None", ",", " ", 
+        "\"\<Field Hint\>\""}], "]"}], "\[IndentingNewLine]", "}"}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.74463354290627*^9, 3.744633561671772*^9}, {
+  3.744633595046442*^9, 3.744633656108328*^9}, {3.7446337853169136`*^9, 
+  3.744633791127088*^9}, {3.744634143693962*^9, 3.7446342158254137`*^9}, {
+  3.7446342766946363`*^9, 3.7446342924649515`*^9}, {3.744634436002514*^9, 
+  3.744634437282514*^9}, {3.744634926563514*^9, 3.744634926833514*^9}, {
+  3.744634959971514*^9, 3.744634973441514*^9}, {3.744635035059514*^9, 
+  3.7446350581155143`*^9}, {3.7446427398623323`*^9, 3.74464274150637*^9}, {
+  3.744643522197055*^9, 3.744643551773651*^9}},
+ CellLabel->"In[1]:=",
+ CellID->241954029,ExpressionUUID->"f574709b-cc95-4780-82dc-23ab1288a518"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RawBoxes", "@", 
+  RowBox[{"rowTemplateToBoxes", "[", "rowTemplate", "]"}]}]], "Input",
+ CellChangeTimes->{{3.735057553728956*^9, 3.735057555612395*^9}, 
+   3.7446349981475143`*^9},
+ CellLabel->"In[2]:=",
+ CellID->332481584,ExpressionUUID->"3c9f32e0-0313-4001-b469-65cc2f8faf39"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"applicationInputRow", "[", "\<\"a\"\>", "]"}], "=", 
+   TagBox[
+    DynamicModuleBox[{
+     NotebookInterface`Private`evaporativeInputFieldVariable$$ = None, 
+     NotebookInterface`Private`orig$$ = None}, 
+     InterpretationBox[
+      FrameBox[
+       InputFieldBox[Dynamic[
+        NotebookInterface`Private`evaporativeInputFieldVariable$$], Number,
+        Appearance->None,
+        FieldHint->"Field Hint"],
+       Background->Dynamic[
+         If[
+         NotebookInterface`Private`evaporativeInputFieldVariable$$ === None, 
+          Automatic, LightYellow]],
+       FrameMargins->1,
+       FrameStyle->GrayLevel[0.7],
+       StripOnInput->False],
+      NotebookInterface`Private`evaporativeInputFieldVariable$$],
+     DynamicModuleValues:>{}],
+    Setting]}], ";"}]], "Output",
+ CellChangeTimes->{{3.744642727351082*^9, 3.7446427434864097`*^9}, 
+   3.7446435540136957`*^9, 3.779737620986823*^9, 3.779738431514801*^9, 
+   3.7797397196584997`*^9},
+ CellLabel->"Out[2]=",
+ CellID->274772092,ExpressionUUID->"13c97119-5376-4206-8f2b-19550e54dcdd"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Generalizations & Extensions", "ExampleSection",ExpressionUUID->
+   "a98a8bc0-0049-488b-b5da-7e4ac1b3f7cc"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1020263627,ExpressionUUID->"2a076deb-1e20-4df1-9cc6-c71dfe9b8397"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Options", "ExampleSection",ExpressionUUID->
+   "95fd70bf-cbe8-48c5-9fb4-b09531f9f6aa"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2061341341,ExpressionUUID->"a6f8dc14-f926-423c-bd97-02c78f94e21c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "ImageSize", "ExampleSubsection",ExpressionUUID->
+   "34b0d8fb-1331-4565-9952-cab9183f69a6"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellChangeTimes->{{3.779739141305784*^9, 3.7797391434034653`*^9}},
+ CellID->391113612,ExpressionUUID->"ea28f68b-c6d1-41e0-9221-8c2b10f1efc2"],
+
+Cell["Valid InputField options are supported:", "ExampleText",
+ CellChangeTimes->{{3.7446426680218906`*^9, 3.7446427143088207`*^9}, {
+  3.7446435618698535`*^9, 3.744643586276346*^9}, {3.7797391473736944`*^9, 
+  3.7797391663549023`*^9}},
+ CellID->369398387,ExpressionUUID->"5ac728c1-580c-46a8-98c1-0794000d1b4b"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<NotebookInterface`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->39045626,ExpressionUUID->"d3f4eee8-49f9-4361-9dbe-7aa1d146cf97"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rowTemplate", "=", 
+   RowBox[{"setRowTemplate", "[", 
+    RowBox[{
+     RowBox[{"applicationInputRow", "[", "\"\<a\>\"", "]"}], ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{"inputFieldTemplate", "[", 
+       RowBox[{"Null", ",", " ", 
+        RowBox[{"ImageSize", "\[Rule]", "Full"}]}], "]"}], 
+      "\[IndentingNewLine]", "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.74463354290627*^9, 3.744633561671772*^9}, {
+   3.744633595046442*^9, 3.744633656108328*^9}, {3.7446337853169136`*^9, 
+   3.744633791127088*^9}, {3.744634143693962*^9, 3.7446342158254137`*^9}, {
+   3.7446342766946363`*^9, 3.7446342924649515`*^9}, {3.744634436002514*^9, 
+   3.744634437282514*^9}, {3.744634926563514*^9, 3.744634926833514*^9}, {
+   3.744634959971514*^9, 3.744634973441514*^9}, {3.744635035059514*^9, 
+   3.7446350581155143`*^9}, {3.7446421551353073`*^9, 3.7446421615166903`*^9}, 
+   3.74464242175854*^9, {3.744642452013452*^9, 3.7446424525534678`*^9}, {
+   3.74464254513025*^9, 3.7446425489723654`*^9}, {3.77973803809313*^9, 
+   3.7797380420021243`*^9}, 3.7797382994923506`*^9, {3.779739496537344*^9, 
+   3.7797395031661453`*^9}},
+ CellLabel->"In[2]:=",
+ CellID->8215849,ExpressionUUID->"0e27ac9b-61c4-438d-af0b-6d6d6c5b0da5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RawBoxes", "@", 
+  RowBox[{"rowTemplateToBoxes", "[", "rowTemplate", "]"}]}]], "Input",
+ CellChangeTimes->{{3.735057553728956*^9, 3.735057555612395*^9}, 
+   3.7446349981475143`*^9},
+ CellLabel->"In[3]:=",
+ CellID->222990262,ExpressionUUID->"e9f18fec-c4ce-48d5-a38e-958bfe81f3e8"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"applicationInputRow", "[", "\<\"a\"\>", "]"}], "=", 
+   TagBox[
+    DynamicModuleBox[{
+     NotebookInterface`Private`evaporativeInputFieldVariable$$ = "", 
+     NotebookInterface`Private`orig$$ = ""}, 
+     InterpretationBox[
+      FrameBox[
+       InputFieldBox[Dynamic[
+        NotebookInterface`Private`evaporativeInputFieldVariable$$], Boxes,
+        Appearance->None,
+        FieldHint->Null,
+        ImageSize->Full],
+       Background->Automatic,
+       FrameMargins->1,
+       FrameStyle->GrayLevel[0.7],
+       StripOnInput->False],
+      ToExpression[
+      NotebookInterface`Private`evaporativeInputFieldVariable$$, 
+       StandardForm]],
+     DynamicModuleValues:>{}],
+    Setting]}], ";"}]], "Output",
+ CellChangeTimes->{3.779739523918975*^9, 3.779739720279809*^9},
+ CellLabel->"Out[3]=",
+ CellID->38386096,ExpressionUUID->"877577e8-25ce-4eab-b293-4cdb3ead4115"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "XXXX", "ExampleSubsection",ExpressionUUID->
+   "6b6c2438-877f-47f5-aabc-59ca49b48c17"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1295379749,ExpressionUUID->"5d4ab398-f541-424d-8069-e4619af47822"]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Applications", "ExampleSection",ExpressionUUID->
+   "131c7102-c482-4d95-b9cd-0edbe310c1e0"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->258228157,ExpressionUUID->"b29345bd-9f6b-45f5-8027-75b4ea004703"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Properties & Relations", "ExampleSection",ExpressionUUID->
+   "5a892d05-bb96-4123-ae5c-cc923d001df0"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2123667759,ExpressionUUID->"78cde114-b71b-49cd-ba6d-169cfe847f2e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Possible Issues", "ExampleSection",ExpressionUUID->
+   "e4ba4005-72a8-4b01-851c-cdb849cd87a5"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1305812373,ExpressionUUID->"465a446f-8acc-488b-a79c-ed29478cc35a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "7902d0eb-ea3d-4869-a573-211342aa26b0"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->208581980,ExpressionUUID->"46cbcd1d-0ef3-4f79-8a71-a2eda512edab"],
+
+Cell["\<\
+Integer and Real numbers can be entered into a field with type Boxes, but \
+Rational numbers will create an error:\
+\>", "ExampleText",
+ CellChangeTimes->{{3.7446425928123817`*^9, 3.744642609123708*^9}, {
+  3.779737683517091*^9, 3.7797377025266905`*^9}, {3.779738140659371*^9, 
+  3.779738198080249*^9}},
+ CellID->41035052,ExpressionUUID->"96cc3046-44b9-4644-ae76-6ebbee30ef23"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<NotebookInterface`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->121702269,ExpressionUUID->"e697f6a3-d575-4b16-92af-e659a21e8d04"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rowTemplate", "=", 
+   RowBox[{"setRowTemplate", "[", 
+    RowBox[{
+     RowBox[{"applicationInputRow", "[", "\"\<a\>\"", "]"}], ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{"inputFieldTemplate", "[", 
+       RowBox[{"1", "/", "3"}], "]"}], "\[IndentingNewLine]", "}"}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.74463354290627*^9, 3.744633561671772*^9}, {
+   3.744633595046442*^9, 3.744633656108328*^9}, {3.7446337853169136`*^9, 
+   3.744633791127088*^9}, {3.744634143693962*^9, 3.7446342158254137`*^9}, {
+   3.7446342766946363`*^9, 3.7446342924649515`*^9}, {3.744634436002514*^9, 
+   3.744634437282514*^9}, {3.744634926563514*^9, 3.744634926833514*^9}, {
+   3.744634959971514*^9, 3.744634973441514*^9}, {3.744635035059514*^9, 
+   3.7446350581155143`*^9}, {3.7446421551353073`*^9, 3.7446421615166903`*^9}, 
+   3.74464242175854*^9, {3.744642452013452*^9, 3.7446424525534678`*^9}, {
+   3.74464254513025*^9, 3.7446425489723654`*^9}, {3.7446426211159506`*^9, 
+   3.744642622107972*^9}, {3.779737708671762*^9, 3.7797377301127243`*^9}, {
+   3.779738005060348*^9, 3.7797380066795673`*^9}},
+ CellLabel->"In[2]:=",
+ CellID->306901396,ExpressionUUID->"f66722a2-0eaa-4fff-af9f-07896d5a271c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RawBoxes", "@", 
+  RowBox[{"rowTemplateToBoxes", "[", "rowTemplate", "]"}]}]], "Input",
+ CellChangeTimes->{3.779738107216839*^9},
+ CellLabel->"In[3]:=",
+ CellID->95781142,ExpressionUUID->"545802fe-4afd-4c62-b948-ed7cda304ba4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"applicationInputRow", "[", "\<\"a\"\>", "]"}], "=", 
+   TagBox[
+    DynamicModuleBox[{
+     NotebookInterface`Private`evaporativeInputFieldVariable$$ = Rational[
+     1, 3], NotebookInterface`Private`orig$$ = Rational[1, 3]}, 
+     InterpretationBox[
+      FrameBox[
+       InputFieldBox[Dynamic[
+        NotebookInterface`Private`evaporativeInputFieldVariable$$], Boxes,
+        Appearance->None,
+        FieldHint->Null],
+       Background->Dynamic[
+         If[Quiet[
+            ToExpression[
+            NotebookInterface`Private`evaporativeInputFieldVariable$$, 
+             StandardForm]] === $Failed, Automatic, LightYellow]],
+       FrameMargins->1,
+       FrameStyle->GrayLevel[0.7],
+       StripOnInput->False],
+      ToExpression[
+      NotebookInterface`Private`evaporativeInputFieldVariable$$, 
+       StandardForm]],
+     DynamicModuleValues:>{}],
+    Setting]}], ";"}]], "Output",
+ CellChangeTimes->{3.7797381107985396`*^9, 3.779738223269249*^9, 
+  3.779738432314234*^9, 3.7797397208713675`*^9},
+ CellLabel->"Out[3]=",
+ CellID->521186925,ExpressionUUID->"5ee85ff3-e157-418a-884f-dd142b5bd1ef"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "d3d79e8c-2dc7-49d1-a257-86bd1b9d4666"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->168315092,ExpressionUUID->"fb0f9de4-fec1-4f79-85d1-ca41b34efda7"],
+
+Cell["Use MakeBoxes to avoid any issues:", "ExampleText",
+ CellChangeTimes->{{3.7446425928123817`*^9, 3.744642609123708*^9}, {
+  3.779737683517091*^9, 3.7797377025266905`*^9}, {3.7797382040509214`*^9, 
+  3.7797382076725316`*^9}},
+ CellID->625622024,ExpressionUUID->"d7481666-3317-4d87-8ce6-6e9258d11488"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rowTemplate", "=", 
+   RowBox[{"setRowTemplate", "[", 
+    RowBox[{
+     RowBox[{"applicationInputRow", "[", "\"\<a\>\"", "]"}], ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{"inputFieldTemplate", "[", 
+       RowBox[{"MakeBoxes", "[", 
+        RowBox[{"1", "/", "3"}], "]"}], "]"}], "\[IndentingNewLine]", "}"}]}],
+     "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.74463354290627*^9, 3.744633561671772*^9}, {
+   3.744633595046442*^9, 3.744633656108328*^9}, {3.7446337853169136`*^9, 
+   3.744633791127088*^9}, {3.744634143693962*^9, 3.7446342158254137`*^9}, {
+   3.7446342766946363`*^9, 3.7446342924649515`*^9}, {3.744634436002514*^9, 
+   3.744634437282514*^9}, {3.744634926563514*^9, 3.744634926833514*^9}, {
+   3.744634959971514*^9, 3.744634973441514*^9}, {3.744635035059514*^9, 
+   3.7446350581155143`*^9}, {3.7446421551353073`*^9, 3.7446421615166903`*^9}, 
+   3.74464242175854*^9, {3.744642452013452*^9, 3.7446424525534678`*^9}, {
+   3.74464254513025*^9, 3.7446425489723654`*^9}, {3.7446426211159506`*^9, 
+   3.744642622107972*^9}, {3.779737708671762*^9, 3.7797377301127243`*^9}, {
+   3.779738005060348*^9, 3.7797380066795673`*^9}, {3.779738215422556*^9, 
+   3.779738221328024*^9}},
+ CellLabel->"In[1]:=",
+ CellID->543773133,ExpressionUUID->"9bbdb3db-4f76-4b66-af76-32d69b01f6bc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RawBoxes", "@", 
+  RowBox[{"rowTemplateToBoxes", "[", "rowTemplate", "]"}]}]], "Input",
+ CellChangeTimes->{3.779738107216839*^9},
+ CellLabel->"In[2]:=",
+ CellID->8429698,ExpressionUUID->"1f5c105f-9bef-44d2-912d-26f13b30b2ba"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"applicationInputRow", "[", "\<\"a\"\>", "]"}], "=", 
+   TagBox[
+    DynamicModuleBox[{
+     NotebookInterface`Private`evaporativeInputFieldVariable$$ = FractionBox[
+     "1", "3"], NotebookInterface`Private`orig$$ = FractionBox["1", "3"]}, 
+     InterpretationBox[
+      FrameBox[
+       InputFieldBox[Dynamic[
+        NotebookInterface`Private`evaporativeInputFieldVariable$$], Boxes,
+        Appearance->None,
+        FieldHint->Null],
+       Background->Dynamic[
+         If[Quiet[
+            ToExpression[
+            NotebookInterface`Private`evaporativeInputFieldVariable$$, 
+             StandardForm]] === Rational[1, 3], Automatic, LightYellow]],
+       FrameMargins->1,
+       FrameStyle->GrayLevel[0.7],
+       StripOnInput->False],
+      ToExpression[
+      NotebookInterface`Private`evaporativeInputFieldVariable$$, 
+       StandardForm]],
+     DynamicModuleValues:>{}],
+    Setting]}], ";"}]], "Output",
+ CellChangeTimes->{3.779738244002314*^9, 3.779738432791274*^9, 
+  3.779739721256879*^9},
+ CellLabel->"Out[2]=",
+ CellID->88027723,ExpressionUUID->"7fd3549d-bc8c-4fa4-8f49-7e59fd877fec"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Interactive Examples", "ExampleSection",ExpressionUUID->
+   "6373b0eb-e723-47de-95ac-72d825072816"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1653164318,ExpressionUUID->"f90a8497-6b0c-400b-a1da-17e521f5c1d2"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Neat Examples", "ExampleSection",ExpressionUUID->
+   "cfcbbbdd-701e-43d4-9a5e-c3cff6296043"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->589267740,ExpressionUUID->"af945a3a-d7a6-440f-ae8d-22a2f6c8a933"]
+}, Open  ]]
+},
+WindowSize->{844, 770},
+WindowMargins->{{235, Automatic}, {Automatic, 135}},
+CellContext->"Global`",
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[18955, 504, 155, 2, 
+  54, "ExtendedExamplesSection", "ExpressionUUID" -> "9cb58aa7-be58-471d-ab07-
+   c121d0ab64ab",
+   CellTags->"ExtendedExamples",
+   CellID->1854448968]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 56175, 1457}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 668, 15, 22, "History", "ExpressionUUID" -> \
+"52597dc7-cdb4-4583-b513-3156d4224d45",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[1251, 39, 123, 1, 27, "CategorizationSection", "ExpressionUUID" -> \
+"842a32de-a1bd-4609-92e4-d72953e83266",
+ CellID->1122911449],
+Cell[1377, 42, 134, 2, 70, "Categorization", "ExpressionUUID" -> \
+"932c54f1-673e-4b57-839f-a9742742e193",
+ CellID->686433507],
+Cell[1514, 46, 153, 2, 70, "Categorization", "ExpressionUUID" -> \
+"ddfeb790-f8f8-4565-9fba-23eeec383763",
+ CellID->756339190],
+Cell[1670, 50, 140, 2, 70, "Categorization", "ExpressionUUID" -> \
+"33d2511c-9874-432f-aca9-f800d11ad9f4",
+ CellID->3376348],
+Cell[1813, 54, 160, 2, 70, "Categorization", "ExpressionUUID" -> \
+"1957219d-b93a-461d-8308-ca8227c3cd3d",
+ CellID->471986626]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2010, 61, 110, 1, 17, "KeywordsSection", "ExpressionUUID" -> \
+"2ce50cf5-f2c5-4d1b-a582-dbdf8fd1a961",
+ CellID->477174294],
+Cell[2123, 64, 100, 1, 70, "Keywords", "ExpressionUUID" -> \
+"6ace025f-6c69-497f-8ab8-2a86db902151",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2260, 70, 120, 1, 17, "TemplatesSection", "ExpressionUUID" -> \
+"d9529dc1-49a6-46d9-8d54-60792a6a7472",
+ CellID->1872225408],
+Cell[2383, 73, 149, 2, 70, "Template", "ExpressionUUID" -> \
+"c52bff39-f157-40e6-8848-ae8dccb2e0be",
+ CellID->1562036412],
+Cell[2535, 77, 137, 2, 70, "Template", "ExpressionUUID" -> \
+"640c619f-462d-41b4-8b59-4ad8e2c1f03b",
+ CellID->158391909],
+Cell[2675, 81, 136, 2, 70, "Template", "ExpressionUUID" -> \
+"ce94a4ba-49e8-4a37-8721-054c31d54507",
+ CellID->1360575930],
+Cell[2814, 85, 137, 2, 70, "Template", "ExpressionUUID" -> \
+"21f40d54-7900-4f14-9a69-a3776eac7a24",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2988, 92, 108, 1, 17, "DetailsSection", "ExpressionUUID" -> \
+"772e5214-9cb8-4375-b9e7-26e394f8e982",
+ CellID->307771771],
+Cell[3099, 95, 118, 2, 70, "Details", "ExpressionUUID" -> \
+"3a1a93ed-e582-4465-af50-1ff4191e796d",
+ CellID->670882175],
+Cell[3220, 99, 124, 2, 70, "Details", "ExpressionUUID" -> \
+"9e25bf3a-c382-4cbd-9ac7-9d5e7c570826",
+ CellID->350963985],
+Cell[3347, 103, 119, 2, 70, "Details", "ExpressionUUID" -> \
+"6c8ad1c3-9bea-4164-a70c-2091cc66bb05",
+ CellID->8391405],
+Cell[3469, 107, 124, 2, 70, "Details", "ExpressionUUID" -> \
+"5e4aeacf-f513-4097-b51e-74780f39a9ab",
+ CellID->3610269],
+Cell[3596, 111, 116, 2, 70, "Details", "ExpressionUUID" -> \
+"166b7187-3795-4668-bfbf-cd9148e991f3",
+ CellID->401364205],
+Cell[3715, 115, 116, 2, 70, "Details", "ExpressionUUID" -> \
+"8eb5113a-d8e2-4444-809a-c7fdf4c10bfe",
+ CellID->350204745],
+Cell[3834, 119, 118, 2, 70, "Details", "ExpressionUUID" -> \
+"a42d46b4-50e7-469f-89e4-6c8280c51d06",
+ CellID->732958810],
+Cell[3955, 123, 133, 2, 70, "Details", "ExpressionUUID" -> \
+"849246c1-bdfa-4835-9551-2119a56a748c",
+ CellID->222905350],
+Cell[4091, 127, 122, 2, 70, "Details", "ExpressionUUID" -> \
+"8eedc37d-9c02-43df-bd57-2df16c4a2c54",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[4250, 134, 116, 1, 62, "ObjectName", "ExpressionUUID" -> \
+"3297305d-d224-4ca1-94ab-d51436b8caf5",
+ CellID->1224892054],
+Cell[4369, 137, 2295, 57, 173, "Usage", "ExpressionUUID" -> \
+"634cd8ff-aada-4e30-9c9a-fd6ba0c05a6c"],
+Cell[6667, 196, 194, 2, 23, "Notes", "ExpressionUUID" -> \
+"89b23d47-5715-49ad-aeda-2674422fd198",
+ CellID->1067943069],
+Cell[6864, 200, 1055, 20, 68, "2ColumnTableMod", "ExpressionUUID" -> \
+"e454176d-b881-4644-8b51-10f86fd9e7ad",
+ CellID->388501959],
+Cell[7922, 222, 737, 18, 24, "Notes", "ExpressionUUID" -> \
+"257f6668-a178-4cdd-b38f-7fdc7307da12",
+ CellID->615842812],
+Cell[8662, 242, 667, 11, 65, "Notes", "ExpressionUUID" -> \
+"181bb2c1-4c0c-4825-8ef8-e03dd8aa87e6",
+ CellID->662083774],
+Cell[9332, 255, 306, 4, 23, "Notes", "ExpressionUUID" -> \
+"cfbc3a6c-e028-4932-bbfc-e08a912304b0",
+ CellID->417944534]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9675, 264, 112, 1, 44, "TutorialsSection", "ExpressionUUID" -> \
+"4dd0a035-e45d-4f82-bf5f-6a89d5efb0a4",
+ CellID->250839057],
+Cell[9790, 267, 296, 6, 16, "Tutorials", "ExpressionUUID" -> \
+"4d81d6fb-8866-4788-936b-6bb808a1a716",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10123, 278, 138, 1, 31, "RelatedDemonstrationsSection", "ExpressionUUID" \
+-> "7023d8f1-e77d-4d78-998b-a48a9e7f1a68",
+ CellID->1268215905],
+Cell[10264, 281, 113, 1, 16, "RelatedDemonstrations", "ExpressionUUID" -> \
+"adf94ef6-5723-4e3f-907e-f102b43ec816",
+ CellID->1129518860]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10414, 287, 120, 1, 31, "RelatedLinksSection", "ExpressionUUID" -> \
+"5db400c2-c0c7-48db-9261-c4f41bb8432f",
+ CellID->1584193535],
+Cell[10537, 290, 104, 1, 16, "RelatedLinks", "ExpressionUUID" -> \
+"055b9f6d-35bc-4520-b005-facf7a7d3444",
+ CellID->1038487239]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10678, 296, 110, 1, 31, "SeeAlsoSection", "ExpressionUUID" -> \
+"65977df7-a18b-485b-9275-c38d96886eec",
+ CellID->1255426704],
+Cell[10791, 299, 4495, 102, 92, "SeeAlso", "ExpressionUUID" -> \
+"a8913cb4-be72-4259-b997-8a89b1c360b9",
+ CellID->868117219]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15323, 406, 112, 1, 31, "MoreAboutSection", "ExpressionUUID" -> \
+"80fa8127-c969-46b6-9976-1b6123e61709",
+ CellID->38303248],
+Cell[15438, 409, 230, 4, 16, "MoreAbout", "ExpressionUUID" -> \
+"efe76235-935e-4c28-a1d1-8afcd225f456",
+ CellID->1665078683]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15705, 418, 411, 11, 68, "PrimaryExamplesSection", "ExpressionUUID" -> \
+"35198a5f-e3ae-400d-93ec-6e3633a707b8",
+ CellID->880084151],
+Cell[16119, 431, 181, 3, 25, "Input", "ExpressionUUID" -> \
+"7cdfe8ac-6f1b-4722-a9fd-280dc8ce88bc",
+ CellID->500661178],
+Cell[16303, 436, 255, 3, 20, "ExampleText", "ExpressionUUID" -> \
+"f44adf84-cf78-47ac-bf7c-5b5fa1a945fe",
+ CellID->116842918],
+Cell[16561, 441, 1020, 18, 62, "Input", "ExpressionUUID" -> \
+"8f2ace17-4db1-41ac-8073-1493fca24bca",
+ CellID->439849185],
+Cell[CellGroupData[{
+Cell[17606, 463, 303, 6, 25, "Input", "ExpressionUUID" -> \
+"0487f260-b966-446e-aa46-b5ee37ec5814",
+ CellID->438965965],
+Cell[17912, 471, 994, 27, 34, "Output", "ExpressionUUID" -> \
+"e6177f7d-8ede-4246-ad3d-32979aa66a64",
+ CellID->14082470]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18955, 504, 155, 2, 54, "ExtendedExamplesSection", "ExpressionUUID" -> \
+"9cb58aa7-be58-471d-ab07-c121d0ab64ab",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+Cell[CellGroupData[{
+Cell[19135, 510, 242, 5, 31, "ExampleSection", "ExpressionUUID" -> \
+"71c06dd2-f0e1-4251-852d-987d5856a846",
+ CellID->1293636265],
+Cell[19380, 517, 180, 3, 25, "Input", "ExpressionUUID" -> \
+"54156716-71ac-4162-9d97-2721a4f21bab",
+ CellID->15561870],
+Cell[19563, 522, 412, 7, 33, "ExampleText", "ExpressionUUID" -> \
+"19e00eac-3476-42b8-b717-bd19ce728877",
+ CellID->559208638],
+Cell[19978, 531, 1215, 22, 62, "Input", "ExpressionUUID" -> \
+"1cb1be97-9225-4484-9109-e03b1fa3c593",
+ CellID->344417707],
+Cell[CellGroupData[{
+Cell[21218, 557, 303, 6, 25, "Input", "ExpressionUUID" -> \
+"6e818f60-4384-4786-9c48-6cff7e9d1fc7",
+ CellID->302170445],
+Cell[21524, 565, 1258, 32, 34, "Output", "ExpressionUUID" -> \
+"5eca7977-1360-46a8-a07f-6a1abaa90697",
+ CellID->265779099]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22819, 602, 240, 5, 16, "ExampleDelimiter", "ExpressionUUID" -> \
+"996d2426-075a-4a72-817c-0a82be49e746",
+ CellID->5490653],
+Cell[23062, 609, 370, 7, 20, "ExampleText", "ExpressionUUID" -> \
+"8af459a6-9de8-4eae-afe4-52342c926fea",
+ CellID->953971111],
+Cell[23435, 618, 1260, 22, 62, "Input", "ExpressionUUID" -> \
+"3d205a57-e6c6-41c0-8eee-d2e330e60e4d",
+ CellID->536876350],
+Cell[CellGroupData[{
+Cell[24720, 644, 303, 6, 25, "Input", "ExpressionUUID" -> \
+"b80b8a45-48c9-4162-9bf2-b45d7b1b0af3",
+ CellID->535706038],
+Cell[25026, 652, 1267, 32, 34, "Output", "ExpressionUUID" -> \
+"64561102-0bdd-4e3e-9d0e-6587e643c603",
+ CellID->53013124]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26342, 690, 242, 5, 16, "ExampleDelimiter", "ExpressionUUID" -> \
+"79d4f873-0566-4008-8eb7-cd3c30303f17",
+ CellID->367970339],
+Cell[26587, 697, 206, 2, 20, "ExampleText", "ExpressionUUID" -> \
+"6e7e865d-f391-42da-86bf-c238ded7f0f6",
+ CellID->715464659],
+Cell[26796, 701, 1191, 22, 62, "Input", "ExpressionUUID" -> \
+"9c0ad48d-a64a-46f5-bc88-756593b37d4b",
+ CellID->282542660],
+Cell[CellGroupData[{
+Cell[28012, 727, 302, 6, 25, "Input", "ExpressionUUID" -> \
+"5df08a75-e02d-44c3-bb68-54a81c9f5328",
+ CellID->94953457],
+Cell[28317, 735, 1085, 28, 34, "Output", "ExpressionUUID" -> \
+"25004fa3-36ff-471a-a09b-97b7eaf2a2b1",
+ CellID->84306452]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29451, 769, 242, 5, 16, "ExampleDelimiter", "ExpressionUUID" -> \
+"552c8576-aa10-4c26-9922-29a34bc0a105",
+ CellID->692269371],
+Cell[29696, 776, 227, 3, 20, "ExampleText", "ExpressionUUID" -> \
+"f12a1624-cc23-4224-8b24-9ce77aa8b027",
+ CellID->1578483],
+Cell[29926, 781, 1126, 21, 62, "Input", "ExpressionUUID" -> \
+"dd965564-d4a5-4677-8f4f-f59d2fde4e53",
+ CellID->10230035],
+Cell[CellGroupData[{
+Cell[31077, 806, 303, 6, 25, "Input", "ExpressionUUID" -> \
+"f0ac60f1-6aee-42dd-991d-d1ac7bd8f94f",
+ CellID->357247989],
+Cell[31383, 814, 1178, 29, 34, "Output", "ExpressionUUID" -> \
+"80ed2310-27cf-4363-9e13-d9daee81dba3",
+ CellID->3196559]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32610, 849, 241, 5, 16, "ExampleDelimiter", "ExpressionUUID" -> \
+"0de749db-d974-4a6f-b75f-82f8dc2f138e",
+ CellID->61913419],
+Cell[32854, 856, 258, 3, 20, "ExampleText", "ExpressionUUID" -> \
+"45bbccc2-15b6-4522-9573-e6d682522683",
+ CellID->42360610],
+Cell[33115, 861, 1060, 19, 62, "Input", "ExpressionUUID" -> \
+"e4aa48d2-55d3-4333-a4b4-64951b6f6ae3",
+ CellID->256592232],
+Cell[CellGroupData[{
+Cell[34200, 884, 303, 6, 25, "Input", "ExpressionUUID" -> \
+"df71120d-824e-45a8-b9bb-e08cae3e9e32",
+ CellID->241602866],
+Cell[34506, 892, 1110, 28, 34, "Output", "ExpressionUUID" -> \
+"69a612c1-ad6e-4b37-a4c0-3405bf315fd5",
+ CellID->82347321]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35665, 926, 242, 5, 16, "ExampleDelimiter", "ExpressionUUID" -> \
+"c175e821-b99c-456e-94ef-2cc088e9118f",
+ CellID->425024919],
+Cell[35910, 933, 278, 5, 33, "ExampleText", "ExpressionUUID" -> \
+"7ca585db-a5b2-4c29-8d13-e7d28e287776",
+ CellID->305291034],
+Cell[36191, 940, 1378, 27, 80, "Input", "ExpressionUUID" -> \
+"04d8be41-eba1-4591-8a6b-0d2d9dfcb5f4",
+ CellID->143775698],
+Cell[CellGroupData[{
+Cell[37594, 971, 303, 6, 25, "Input", "ExpressionUUID" -> \
+"923f39ba-e2fb-41cc-9665-5f290858bdd0",
+ CellID->835284947],
+Cell[37900, 979, 2271, 57, 35, "Output", "ExpressionUUID" -> \
+"3c94ab56-2328-43d2-bbdf-929db5f1b4a1",
+ CellID->578502666]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40220, 1042, 242, 5, 16, "ExampleDelimiter", "ExpressionUUID" -> \
+"37f10895-6d24-4744-abfc-0c792a37bfbd",
+ CellID->801444734],
+Cell[40465, 1049, 296, 5, 20, "ExampleText", "ExpressionUUID" -> \
+"5a33c6a1-2230-43f4-8c74-ce0ad58a6208",
+ CellID->14995451],
+Cell[40764, 1056, 1099, 21, 62, "Input", "ExpressionUUID" -> \
+"f574709b-cc95-4780-82dc-23ab1288a518",
+ CellID->241954029],
+Cell[CellGroupData[{
+Cell[41888, 1081, 303, 6, 25, "Input", "ExpressionUUID" -> \
+"3c9f32e0-0313-4001-b469-65cc2f8faf39",
+ CellID->332481584],
+Cell[42194, 1089, 1099, 28, 35, "Output", "ExpressionUUID" -> \
+"13c97119-5376-4206-8f2b-19550e54dcdd",
+ CellID->274772092]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[43332, 1122, 265, 5, 31, "ExampleSection", "ExpressionUUID" -> \
+"2a076deb-1e20-4df1-9cc6-c71dfe9b8397",
+ CellID->1020263627],
+Cell[CellGroupData[{
+Cell[43622, 1131, 244, 5, 19, "ExampleSection", "ExpressionUUID" -> \
+"a6f8dc14-f926-423c-bd97-02c78f94e21c",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[43891, 1140, 319, 6, 22, "ExampleSubsection", "ExpressionUUID" -> \
+"ea28f68b-c6d1-41e0-9221-8c2b10f1efc2",
+ CellID->391113612],
+Cell[44213, 1148, 311, 4, 20, "ExampleText", "ExpressionUUID" -> \
+"5ac728c1-580c-46a8-98c1-0794000d1b4b",
+ CellID->369398387],
+Cell[44527, 1154, 180, 3, 25, "Input", "ExpressionUUID" -> \
+"d3f4eee8-49f9-4361-9dbe-7aa1d146cf97",
+ CellID->39045626],
+Cell[44710, 1159, 1275, 23, 62, "Input", "ExpressionUUID" -> \
+"0e27ac9b-61c4-438d-af0b-6d6d6c5b0da5",
+ CellID->8215849],
+Cell[CellGroupData[{
+Cell[46010, 1186, 303, 6, 25, "Input", "ExpressionUUID" -> \
+"e9f18fec-c4ce-48d5-a38e-958bfe81f3e8",
+ CellID->222990262],
+Cell[46316, 1194, 924, 26, 34, "Output", "ExpressionUUID" -> \
+"877577e8-25ce-4eab-b293-4cdb3ead4115",
+ CellID->38386096]
+}, Open  ]]
+}, Open  ]],
+Cell[47267, 1224, 247, 5, 22, "ExampleSubsection", "ExpressionUUID" -> \
+"5d4ab398-f541-424d-8069-e4619af47822",
+ CellID->1295379749]
+}, Open  ]],
+Cell[47529, 1232, 248, 5, 31, "ExampleSection", "ExpressionUUID" -> \
+"b29345bd-9f6b-45f5-8027-75b4ea004703",
+ CellID->258228157],
+Cell[47780, 1239, 259, 5, 19, "ExampleSection", "ExpressionUUID" -> \
+"78cde114-b71b-49cd-ba6d-169cfe847f2e",
+ CellID->2123667759],
+Cell[CellGroupData[{
+Cell[48064, 1248, 252, 5, 19, "ExampleSection", "ExpressionUUID" -> \
+"465a446f-8acc-488b-a79c-ed29478cc35a",
+ CellID->1305812373],
+Cell[CellGroupData[{
+Cell[48341, 1257, 242, 5, 16, "ExampleDelimiter", "ExpressionUUID" -> \
+"46cbcd1d-0ef3-4f79-8a71-a2eda512edab",
+ CellID->208581980],
+Cell[48586, 1264, 387, 7, 33, "ExampleText", "ExpressionUUID" -> \
+"96cc3046-44b9-4644-ae76-6ebbee30ef23",
+ CellID->41035052],
+Cell[48976, 1273, 181, 3, 25, "Input", "ExpressionUUID" -> \
+"e697f6a3-d575-4b16-92af-e659a21e8d04",
+ CellID->121702269],
+Cell[49160, 1278, 1246, 22, 62, "Input", "ExpressionUUID" -> \
+"f66722a2-0eaa-4fff-af9f-07896d5a271c",
+ CellID->306901396],
+Cell[CellGroupData[{
+Cell[50431, 1304, 250, 5, 25, "Input", "ExpressionUUID" -> \
+"545802fe-4afd-4c62-b948-ed7cda304ba4",
+ CellID->95781142],
+Cell[50684, 1311, 1157, 30, 39, "Output", "ExpressionUUID" -> \
+"5ee85ff3-e157-418a-884f-dd142b5bd1ef",
+ CellID->521186925]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51890, 1347, 242, 5, 16, "ExampleDelimiter", "ExpressionUUID" -> \
+"fb0f9de4-fec1-4f79-85d1-ca41b34efda7",
+ CellID->168315092],
+Cell[52135, 1354, 304, 4, 20, "ExampleText", "ExpressionUUID" -> \
+"d7481666-3317-4d87-8ce6-6e9258d11488",
+ CellID->625622024],
+Cell[52442, 1360, 1338, 24, 62, "Input", "ExpressionUUID" -> \
+"9bbdb3db-4f76-4b66-af76-32d69b01f6bc",
+ CellID->543773133],
+Cell[CellGroupData[{
+Cell[53805, 1388, 249, 5, 25, "Input", "ExpressionUUID" -> \
+"1f5c105f-9bef-44d2-912d-26f13b30b2ba",
+ CellID->8429698],
+Cell[54057, 1395, 1151, 30, 57, "Output", "ExpressionUUID" -> \
+"7fd3549d-bc8c-4fa4-8f49-7e59fd877fec",
+ CellID->88027723]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[55247, 1430, 257, 5, 31, "ExampleSection", "ExpressionUUID" -> \
+"f90a8497-6b0c-400b-a1da-17e521f5c1d2",
+ CellID->1653164318],
+Cell[55507, 1437, 249, 5, 19, "ExampleSection", "ExpressionUUID" -> \
+"af945a3a-d7a6-440f-ae8d-22a2f6c8a933",
+ CellID->589267740]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

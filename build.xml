@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="deploy" basedir=".">
+	<property file="build.properties"/>
+	<property name="appPath" value="${appPath.default}" />
+	<property name="jlinkpath" value="${mathematicaInstallDir}/SystemFiles/Links/JLink" />
+
+	<property name="packageContext" value="${packageName}`" />
+	<property name="buildDir" value="build" />
+	
+	<!--need ant-contrib-->
+	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
+
+	<path id="jlink.lib">
+		<fileset dir="${jlinkpath}">
+			<include name="**/JLink.jar" />
+			<include name="**/SystemFiles/*" />
+		</fileset>
+	</path>
+
+	<!-- Load JLink -->
+	<taskdef name="mathematica" classname="com.wolfram.jlink.util.MathematicaTask">
+		<classpath refid="jlink.lib" />
+	</taskdef>
+
+	<mathematica exe="${mathExe}">
+		<![CDATA[
+			If[!TrueQ@initialized,
+				initialized=True;
+				PrependTo[$Path, AntProperty["basedir"]];
+			];
+		]]>
+	</mathematica>
+
+	<target name="clean" description="Clean build">
+		<echo message="Deleting folder ${buildDir}"/>
+		<delete dir="${buildDir}" />
+	</target>
+
+	<!-- it always rebuids regardless whether source changed or not (clean is run first) -->
+	<target name="docBuild" description="Build Documentation">
+		<ant antfile="docbuild.xml" target="main"/>
+	</target>
+
+	<target name="postprocDoc" description="Post-processing built documents" depends="docBuild">
+		<echo message="Post-processing built documents"/>
+		<mathematica exe="${mathExe}">
+		<![CDATA[
+			UsingFrontEnd[
+				(*For Symbol docs there are usually several menus separated by spaces. Drop or replace the URL and spaces before it*)
+				replaceURL[Cell[BoxData[GridBox[{{a_Cell,Cell[TextData[{b__,"\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+					Cell[BoxData[ActionMenuBox[FrameBox[InterpretationBox[Cell[TextData[{"URL",___}],___],___],___],___]],___]}],"AnchorBar"]}}]],
+					"AnchorBarGrid",opts___,CellID->1,opts2___]] := Cell[BoxData[GridBox[{{a,Cell[TextData[{b}],"AnchorBar"]}}]],"AnchorBarGrid",opts,CellID->1,opts2];
+				replaceURL[Cell[BoxData[GridBox[{{a_Cell,Cell[TextData[{b__,"\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+					Cell[BoxData[ActionMenuBox[FrameBox[InterpretationBox[Cell[TextData[{"URL",___}],___],___],___],___]],___]}],"AnchorBar"]}}]],
+					"AnchorBarGrid",opts___,CellID->1,opts2___],new_Cell] := Cell[BoxData[GridBox[{{a,Cell[TextData[{b,"\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]",new}],"AnchorBar"]}}]],
+					"AnchorBarGrid",opts,CellID->1,opts2];
+					(*Add pattern for old workbench plugin, which doesn't use InterpretationBox*)
+				replaceURL[Cell[BoxData[GridBox[{{a_Cell,Cell[TextData[{b__,"\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+					Cell[BoxData[ActionMenuBox[FrameBox["\"URL »\"",___],___]],___]}],"AnchorBar"]}}]],"AnchorBarGrid",opts___,CellID->1,opts2___]] := 
+					Cell[BoxData[GridBox[{{a,Cell[TextData[{b}],"AnchorBar"]}}]],"AnchorBarGrid",opts,CellID->1,opts2];
+				replaceURL[Cell[BoxData[GridBox[{{a_Cell,Cell[TextData[{b__,"\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]",
+					Cell[BoxData[ActionMenuBox[FrameBox["\"URL »\"",___],___]],___]}],"AnchorBar"]}}]],"AnchorBarGrid",opts___,CellID->1,opts2___],new_Cell] := 
+					Cell[BoxData[GridBox[{{a,Cell[TextData[{b,"\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]",new}],"AnchorBar"]}}]],"AnchorBarGrid",opts,CellID->1,opts2];
+				(*For Tutorial docs there is usually only the URL menu. Drop or replace it*)
+				replaceURL[Cell[BoxData[GridBox[{{a_Cell,Cell[TextData[Cell[BoxData[ActionMenuBox[FrameBox[InterpretationBox[
+					Cell[TextData[{"URL",___}],___],___],___],___]],___]],"AnchorBar"]}}]],"AnchorBarGrid",opts___,CellID->1,opts2___]] :=
+					Cell[BoxData[GridBox[{{a}}]],"AnchorBarGrid",opts,CellID->1,opts2];
+				replaceURL[Cell[BoxData[GridBox[{{a_Cell,Cell[TextData[Cell[BoxData[ActionMenuBox[FrameBox[InterpretationBox[
+					Cell[TextData[{"URL",___}],___],___],___],___]],___]],"AnchorBar"]}}]],"AnchorBarGrid",opts___,CellID->1,opts2___],new_Cell] :=
+					Cell[BoxData[GridBox[{{a,Cell[TextData[new],"AnchorBar"]}}]],"AnchorBarGrid",opts,CellID->1,opts2];
+				(*Add pattern for old workbench plugin, which doesn't use InterpretationBox*)
+				replaceURL[Cell[BoxData[GridBox[{{a_Cell,Cell[TextData[Cell[BoxData[ActionMenuBox[FrameBox["\"URL »\"",___],___]],___]],"AnchorBar"]}}]],
+					"AnchorBarGrid",opts___,CellID->1,opts2___]] := Cell[BoxData[GridBox[{{a}}]],"AnchorBarGrid",opts,CellID->1,opts2];
+				replaceURL[Cell[BoxData[GridBox[{{a_Cell,Cell[TextData[Cell[BoxData[ActionMenuBox[FrameBox["\"URL »\"",___],___]], ___]],
+					"AnchorBar"]}}]],"AnchorBarGrid",opts___,CellID->1,opts2___],new_Cell] :=
+					Cell[BoxData[GridBox[{{a,Cell[TextData[new],"AnchorBar"]}}]],"AnchorBarGrid",opts,CellID->1,opts2];
+				replaceURL[___] := $Failed;
+				printButton = Cell[BoxData[ButtonBox["\<\"Print\"\>",Appearance->"Palette",ButtonFunction:>FrontEndExecute[FrontEndToken["PrintDialog"]],
+					Evaluator->Automatic,Method->"Preemptive"]],"AnchorPrintButton"];
+				(*modify documentation*)
+				modifyCBIDocumentation[path_String] := Module[
+					{nb, co, c, new, short=FileNameTake[path,-2]},
+					nb = NotebookOpen[path, Visible->True];
+					SetOptions[nb,StyleDefinitions-"CBI_Documentation/CBIDocumentation.nb"];
+					(* Replace URLs menu with a Print button. *)
+					co = Quiet[First@Cells[nb, CellID->1], {First::nofirst}];
+					If[MatchQ[co, _CellObject],
+							(* get current cell contents *)
+							c = NotebookRead[co];
+							If[StringMatchQ[FileNameTake[path, -1], __ ~~ "CDF.nb"],
+							(* file is CDF documentation, replace URL with a Print button *)
+							new = replaceURL[c, printButton]
+							,
+							(* file is normal documentation, drop URL *)
+							new = replaceURL[c]
+						];
+							If[new =!= $Failed,
+							AntLog["Replacing AnchorBar URL in "<>short];
+							NotebookWrite[co, new, All]
+							,
+							(* determine the problem *)
+							If[MatchQ[c, Cell[_, "AnchorBarGrid", ___]],
+								(* if cell present but replacement failed then it may have been changed previously (or updates to MMA could have broken it, so check this if unexpected errors occur *)
+								AntLog["Not replaced, AnchorBarGrid cell may have been previously modified in "<>short],
+								(* else the cell isn't the right type *)
+								AntLog["Not replaced, AnchorBarGrid cell not found (normal for Guide pages) in "<>short]
+							];
+						]
+							,
+							(* if Cell 1 not found see if a new version of MMA changed how documentation is built *)
+							AntLog["Did not find CellID->1 in "<>short];
+						];
+					(* Save and close notebook *)
+					NotebookSave[nb];
+					NotebookClose[nb]
+				];
+				(* post-processing build documents *)
+					path = FileNameJoin[{AntProperty["basedir"], AntProperty["buildDir"]}];
+					flNms = FileNames["*.nb", path, Infinity];
+				Map[modifyCBIDocumentation, flNms];
+			];
+		]]>
+		</mathematica>
+	</target>
+
+	<target name="deployCompleted" description="Deploy the completed application">
+		<!-- when deploying to the release library directly, make sure
+			1. the package directory is set up with correct permisions and folder property first;
+			2. folder content is not locked (i.e. no one is using it and Index/SpellIndex are not locked) 
+		-->
+		<echo message="Deploying the completed application"/>
+		<delete includeemptydirs="true" failonerror="false">
+			<fileset dir="${deployDir}/${packageName}" includes="**/*" />
+		</delete>
+		<copy todir="${deployDir}/${packageName}">
+			<fileset dir="${packageName}">
+				<exclude name="**/Documentation/**" />
+				<exclude name="**/Test/**" />
+			</fileset>
+			<fileset dir="${buildDir}/${packageName}" />
+		</copy>
+	</target>
+
+	<target name="deploy" description="Deploy a complete application, build first">
+		<echo message="Build and deploy the package"/>
+		<antcall target="buildAll" />
+		<antcall target="deployCompleted" />
+	</target>
+
+	<target name="buildAll" description="Build everything">
+		<echo message="Building the package"/>
+		<antcall target="postprocDoc" />
+	</target>
+
+
+	<target name="runTests" description="Run tests on the package">
+		<echo message="mathExe=${mathExe}"/>
+		<echo message="jlinkpath=${jlinkpath}"/>
+		<mathematica exe="${mathExe}">
+			<![CDATA[
+				Needs["MUnit`"];
+				Needs[AntProperty["packageContext"]];
+				logger[]:=With[{logger = Unique["MUnit`Loggers`Private`logger"]},
+					logger /: LogEnd[logger, testCnt_, (*successCnt*)_, failCnt_, msgFailCnt_, skippedTestCnt_, errorCnt_, (*abort*)_] :=
+						(
+							If[wasAbortedOrFatal, WriteString[$Output, "Test run stopped before completion.\n"]];
+							WriteString[$Output, StringForm["Tests run: `1`,  Failures: `2`,  Messages Failures: `3`,  Skipped Tests: `4`, Errors: `5`", testCnt, failCnt, msgFailCnt, skippedTestCnt, errorCnt]];
+						);
+					logger
+				];
+				(testfile=#;
+				 AntLog["			  ***"<>testfile<>"***"];
+				 testStatus=TestRun[testfile,Loggers->{logger[]}];
+				 If[testStatus=!=True,AntFail["Test failed!"]];
+				)&/@
+				{
+				 "Test/UnitTests/NotebookInterfaceTest.mt"
+				}
+			]]>
+		</mathematica>
+	</target>
+
+</project>
