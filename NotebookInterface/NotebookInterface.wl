@@ -704,7 +704,7 @@ evaporativeControlFromTemplate[template_Association] :=
 					evaporativeInputField[
 						value, 
 						Replace[inptype, Except[Expression|Number|String|Boxes] -> Boxes],
-						"InputFieldValidationFunction" -> Replace[fcn, Except[Function|None] -> None],
+						"InputFieldValidationFunction" -> Replace[fcn, Except[_Function|None] -> None],
 						"InputFieldValidationMessage" -> Replace[msg, _Missing -> None],
 						FieldHint -> Replace[hint, _Missing -> Null],
 						Replace[opts,{_Missing :> Sequence[], o_ :> Sequence@@o}]
@@ -1363,7 +1363,7 @@ inputAidControlFromTemplate[var_, template_Association] :=
 				inputAidInputField[
 					var,
 					Replace[inptype, Except[Expression|Number|String|Boxes] -> Boxes],
-					"InputFieldValidationFunction" -> Replace[fcn, Except[Function|None] -> None],
+					"InputFieldValidationFunction" -> Replace[fcn, Except[_Function|None] -> None],
 					"InputFieldValidationMessage" -> Replace[msg, _Missing -> None],
 					FieldHint -> Replace[hint, _Missing -> Null],
 					Replace[opts,{_Missing :> Sequence[], o_ :> Sequence@@o}]
